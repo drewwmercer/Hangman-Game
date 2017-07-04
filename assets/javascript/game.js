@@ -2,3 +2,5 @@ var terms = ["bootcampspot","javascript","container","github","sublime","console
 
 ver termToGuess = terms[Math.floor(Math.random() * terms.length)];
 
+var guessesLeft = 9;
+
