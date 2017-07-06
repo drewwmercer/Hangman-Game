@@ -24,12 +24,19 @@ var termToGuess = terms[Math.floor(Math.random() * terms.length)];
 
 var guessesLeft = 8;
 
+
+
 console.log(guessesLeft);
 
 guesses = document.getElementById("guesses-left").innerHTML;
 
 console.log(guessesLeft);
 
+
+
+function chooseTerm() {
+
+}
 
 
 // 1. post
