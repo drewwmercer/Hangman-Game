@@ -49,13 +49,14 @@ for (var i = 0; i < termToGuess.length; i++) {
 }
 
 blankSpaces.join(" ") // this puts blank spaces between the underscores
+console.log(wrongGuessesLeft);
 }
 
 
 
 
 
-console.log(wrongGuessesLeft);
+
 
 //var guessesLeft = document.getElementById("guesses-left").innerHTML;
 
