@@ -59,8 +59,12 @@ console.log(guessesLeft);
 
 
 while (correctLettersLeft > 0) {
+    var testOne = document.getElementById("something");
+    testOne.innerHTML = blankSpaces.join(" ") // this puts blank spaces between the underscores
 
 
+// test
+document.getElementById("guesses-left").innerHTML = wrongGuessesLeft;
 }
 
 
