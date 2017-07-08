@@ -59,8 +59,8 @@ console.log(wrongGuessesLeft);
 
 // document.getElementById("win-counter").innerHTML = winCounter;
 
-
-while (correctLettersLeft > 0) {
+function gamePlay(event) {
+if (correctLettersLeft > 0) {
     var testOne = document.getElementById("something");
     testOne.innerHTML = blankSpaces.join(" ") // this puts blank spaces between the underscores
 
@@ -73,6 +73,7 @@ while (correctLettersLeft > 0) {
 document.getElementById("guesses-left").innerHTML = wrongGuessesLeft;
 }
 
+}
 
 // 1. post
 // 2. head
