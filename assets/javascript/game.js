@@ -30,6 +30,9 @@ var termToGuess = terms[Math.floor(Math.random() * terms.length)];
 
 var wrongGuessesLeft = 8;
 
+// count the number of wins
+var winCounter = 0;
+
 // 
 var correctLettersLeft = termToGuess.length;
 
@@ -50,7 +53,13 @@ var guessesLeft = document.getElementById("guesses-left").innerHTML;
 
 console.log(guessesLeft);
 
+var winCounter = document.getElementById("win-counter").innerHTML = winCounter;
 
+
+while (correctLettersLeft > 0) {
+
+
+}
 
 
 // 1. post
