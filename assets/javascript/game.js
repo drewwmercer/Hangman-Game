@@ -23,9 +23,18 @@ var terms = ["bootcampspot",
     "gitlab",
     "jquery"];
 
-var termNumToGuess = terms[Math.floor(Math.random() * terms.length)];
+var termToGuess = terms[Math.floor(Math.random() * terms.length)];
 
-var guessesLeft = 8;
+var wrongGuessesLeft = 8;
+
+var correctLettersLeft = termToGuess.length;
+
+var blankSpaces = [];
+
+for (var i = 0; i < termToGuess.length; i++) {
+    blankSpaces[i] = "_";
+}
+
 
 
 
