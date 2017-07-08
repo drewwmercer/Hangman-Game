@@ -1,5 +1,7 @@
+// valid letters that can be guessed
 var validLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
+// array of terms that can populate the blanks
 var terms = ["bootcampspot",
     "javascript",
     "container",
@@ -35,7 +37,7 @@ for (var i = 0; i < termToGuess.length; i++) {
     blankSpaces[i] = "_";
 }
 
-
+blankSpaces.join(" ") // do something with this
 
 
 console.log(guessesLeft);
