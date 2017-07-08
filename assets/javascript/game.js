@@ -33,27 +33,29 @@ var wrongGuessesLeft = 8;
 // count the number of wins
 var winCounter = 0;
 
-// 
+// good guesses left to be guessed
 var correctLettersLeft = termToGuess.length;
 
 // make an empty array for blank spaces
 var blankSpaces = [];
-
 // set up the blank spaces for the selected word
 for (var i = 0; i < termToGuess.length; i++) {
     blankSpaces[i] = "_";
 }
 
-blankSpaces.join(" ") // do something with this
+blankSpaces.join(" ") // this puts blank spaces between the underscores
+
+
+
+
 
 
 console.log(guessesLeft);
 
-var guessesLeft = document.getElementById("guesses-left").innerHTML;
+//var guessesLeft = document.getElementById("guesses-left").innerHTML;
 
-console.log(guessesLeft);
 
-document.getElementById("win-counter").innerHTML = winCounter;
+// document.getElementById("win-counter").innerHTML = winCounter;
 
 
 while (correctLettersLeft > 0) {
