@@ -27,29 +27,32 @@ var terms = ["bootcampspot",
     "gitlab",
     "jquery"];
 
-function gameLayout() {
-
-// randomly selecting a word from the array
-var termToGuess = terms[Math.floor(Math.random() * terms.length)];
-
 // default remaining wrong guesses
 var wrongGuessesLeft = 8;
 
 // count the number of wins
 var winCounter = 0;
 
-// good guesses left to be guessed
-var correctLettersLeft = termToGuess.length;
 
-// make an empty array for blank spaces
-var blankSpaces = [];
-// set up the blank spaces for the selected word
-for (var i = 0; i < termToGuess.length; i++) {
-    blankSpaces[i] = "_";
-}
+function gameLayout() {
 
-blankSpaces.join(" ") // this puts blank spaces between the underscores
-console.log(wrongGuessesLeft);
+    // randomly selecting a word from the array
+    var termToGuess = terms[Math.floor(Math.random() * terms.length)];
+
+    // good guesses left to be guessed
+    var correctLettersLeft = termToGuess.length;
+
+    // make an empty array for blank spaces
+    var blankSpaces = [];
+    // set up the blank spaces for the selected word
+    for (var i = 0; i < termToGuess.length; i++) {
+        blankSpaces[i] = "_";
+    }
+
+    blankSpaces.join(" ") // this puts blank spaces between the underscores
+    console.log(wrongGuessesLeft);
+
+    document.querySelector("#guesses-left").innerHTML = "Number of guesses remaining: " + wrongGuessesLeft;
 }
 
 
@@ -65,21 +68,21 @@ console.log(wrongGuessesLeft);
 
 
 
- 
+
 
 function gamePlay(event) {
-if (correctLettersLeft > 0) {
-    var testOne = document.getElementById("something");
-    testOne.innerHTML = blankSpaces.join(" ") // this puts blank spaces between the underscores
+    if (correctLettersLeft > 0) {
+        var testOne = document.getElementById("#blank-spaces");
+        testOne.innerHTML = blankSpaces.join(" ") // this puts blank spaces between the underscores
 
-    document.onkeyup = function(event) {
-    letterGuessed = event.key;
+        document.onkeyup = function (event) {
+            letterGuessed = event.key;
+        }
+        console.log(letterGuessed); // take me out later
+
+        // test
+        document.getElementById("#guesses-left").innerHTML = wrongGuessesLeft;
     }
-    console.log(letterGuessed); // take me out later
-
-// test
-document.getElementById("guesses-left").innerHTML = wrongGuessesLeft;
-}
 
 }
 
