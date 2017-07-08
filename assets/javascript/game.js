@@ -25,14 +25,18 @@ var terms = ["bootcampspot",
     "gitlab",
     "jquery"];
 
+// randomly selecting a word from the array
 var termToGuess = terms[Math.floor(Math.random() * terms.length)];
 
 var wrongGuessesLeft = 8;
 
+// 
 var correctLettersLeft = termToGuess.length;
 
+// make an empty array for blank spaces
 var blankSpaces = [];
 
+// set up the blank spaces for the selected word
 for (var i = 0; i < termToGuess.length; i++) {
     blankSpaces[i] = "_";
 }
@@ -47,10 +51,6 @@ var guessesLeft = document.getElementById("guesses-left").innerHTML;
 console.log(guessesLeft);
 
 
-
-function chooseTerm() {
-
-}
 
 
 // 1. post
