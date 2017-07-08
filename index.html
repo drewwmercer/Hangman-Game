@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us">
+
 <head>
     <title>Bootcamp Hangman</title>
     <meta charset="UTF-8">
@@ -8,46 +9,51 @@
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    
+
 </head>
+
 <body>
-    
+
     <div class="container">
         <div class="jumbotron">
             <div class="row">
                 <div class="col-md-8 col-md-offest-2">
                     <h1>Bootcamp Hangman</h1>
                 </div>
-                
+
                 <div class="col-md-6 col-md-offest-3">
                     <h2>Press any key to get started!</h2>
                 </div>
-            </div> <!-- close first row -->
-
-        <div class="row">
-            <div class="col-md-4 col-md-offset-4">
-                <h3>Wins: </h3>
             </div>
+            <!-- close first row -->
+
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                    <h3>Wins: </h3>
+                </div>
+            </div>
+
+            <div class="row">
+                <p>Show the word blanks to be guessed</p>
+            </div>
+
+            <div class="row">
+                <p>Number of guesses remaining: <span id="guesses-left"></span></p>
+            </div>
+
+            <div class="row">
+                <p>Letters already guessed: </p>
+            </div>
+
         </div>
-
-        <div class="row">            
-            <p>Show the word blanks to be guessed</p>
-        </div>
-
-        <div class="row">            
-            <p>Number of guesses remaining: <span id="guesses-left"></span></p>
-        </div>
-
-        <div class="row">            
-            <p>Letters already guessed: </p>
-        </div>
-
-        </div> <!-- close jumbotron -->
-    </div> <!-- close main container -->
+        <!-- close jumbotron -->
+    </div>
+    <!-- close main container -->
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>
+
 </html>
