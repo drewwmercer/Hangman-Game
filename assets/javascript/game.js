@@ -1,6 +1,8 @@
 // valid letters that can be guessed
 var validLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
+var letterGuessed;
+
 // array of terms that can populate the blanks
 var terms = ["bootcampspot",
     "javascript",
@@ -62,6 +64,10 @@ while (correctLettersLeft > 0) {
     var testOne = document.getElementById("something");
     testOne.innerHTML = blankSpaces.join(" ") // this puts blank spaces between the underscores
 
+    document.onkeyup = function(event) {
+    letterGuessed = event.key;
+    }
+    console.log(letterGuessed); // take me out later
 
 // test
 document.getElementById("guesses-left").innerHTML = wrongGuessesLeft;
