@@ -20,9 +20,10 @@ var terms = ["bootcampspot",
 "chrome",
 "mozilla",
 "heroku",
-"gitlab"];
+"gitlab",
+"jquery"];
 
-var termToGuess = terms[Math.floor(Math.random() * terms.length)];
+var termNumToGuess = terms[Math.floor(Math.random() * terms.length)];
 
 var guessesLeft = 8;
 
@@ -30,7 +31,7 @@ var guessesLeft = 8;
 
 console.log(guessesLeft);
 
-guesses = document.getElementById("guesses-left").innerHTML;
+var guessesLeft = document.getElementById("guesses-left").innerHTML;
 
 console.log(guessesLeft);
 
