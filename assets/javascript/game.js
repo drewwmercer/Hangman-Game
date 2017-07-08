@@ -27,9 +27,12 @@ var terms = ["bootcampspot",
     "gitlab",
     "jquery"];
 
+function gameLayout() {
+
 // randomly selecting a word from the array
 var termToGuess = terms[Math.floor(Math.random() * terms.length)];
 
+// default remaining wrong guesses
 var wrongGuessesLeft = 8;
 
 // count the number of wins
@@ -46,7 +49,7 @@ for (var i = 0; i < termToGuess.length; i++) {
 }
 
 blankSpaces.join(" ") // this puts blank spaces between the underscores
-
+}
 
 
 
@@ -58,6 +61,10 @@ console.log(wrongGuessesLeft);
 
 
 // document.getElementById("win-counter").innerHTML = winCounter;
+
+
+
+ 
 
 function gamePlay(event) {
 if (correctLettersLeft > 0) {
