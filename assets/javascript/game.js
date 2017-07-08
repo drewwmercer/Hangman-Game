@@ -53,7 +53,7 @@ var guessesLeft = document.getElementById("guesses-left").innerHTML;
 
 console.log(guessesLeft);
 
-var winCounter = document.getElementById("win-counter").innerHTML = winCounter;
+document.getElementById("win-counter").innerHTML = winCounter;
 
 
 while (correctLettersLeft > 0) {
