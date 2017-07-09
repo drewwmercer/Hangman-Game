@@ -65,18 +65,12 @@ gameLayout();  // calling the function above
 // need loss
 // need win
 
-
 // function gamePlay(event) {
 
 // if (correctLettersLeft > 0 && wrongGuessesLeft > 0) {
 // var testOne = document.getElementById("blank-spaces");
 // testOne.innerHTML = blankSpaces.join(" ") // this puts blank spaces between the underscores
 
-// document.onkeyup = function (event) {
-//     console.log(event)
-//     var letterGuessed = event.key;
-// }
-//  document.getElementById("incorrect-letters").append(letterGuessed)
 //}
 // console.log(letterGuessed); // take me out later
 // for (var j = 0; j < termToGuess.length; j++) {
