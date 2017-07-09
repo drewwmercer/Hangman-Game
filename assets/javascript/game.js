@@ -52,8 +52,8 @@ function gamePlay(event) {
         // var testOne = document.getElementById("blank-spaces");
         // testOne.innerHTML = blankSpaces.join(" ") // this puts blank spaces between the underscores
 
-       // document.onkeyup = function (event) {
-          //  var letterGuessed = event.key;
+       document.onkeyup = function (event) {
+           var letterGuessed = event.key;
           //  document.getElementById("incorrect-letters").append(letterGuessed)
         //}
         console.log(letterGuessed); // take me out later
