@@ -10,7 +10,19 @@ var correctLettersLeft;
 var letterGuessed;
 var lettersAlreadyGuessed = [];  // empty array to show the letters pressed already
 var winCounter = 0;  // count the number of wins and put it on the page
+var termToGuess;
+var blankSpaces;
 
+
+function gameLoad() {
+    termToGuess = terms[Math.floor(Math.random() * terms.length)];
+    blankSpaces = [];
+    for (var i = 0; i < termToGuess.length; i++) {
+        blankSpaces[i] = "_";
+    }
+    document.getElementById("blank-spaces").innerHTML = blankSpaces.join(" ");
+}
+gameLoad();
 
 function gameLayout() {
 
@@ -58,7 +70,7 @@ function gameLayout() {
         // }
         //lettersAlreadyGuessed = lettersAlreadyGuessed.push(letterGuessed);
     }
-    playerMove();
+    // playerMove();
 
     function checkGuess() {
         for (var j = 0; j < termToGuess.length; j++) {
@@ -68,6 +80,9 @@ function gameLayout() {
                 }
                 if (letterGuessed !== termToGuess[j]) {
                     wrongGuessesLeft--;
+                }
+                if (correctLettersLeft === 0) {
+                    winCounter++;
                 }
 
                 document.getElementById("incorrect-letters").innerHTML = "Letters you have guessed: " + "<strong>" + lettersAlreadyGuessed + "</strong>";
