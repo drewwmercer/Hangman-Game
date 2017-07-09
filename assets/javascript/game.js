@@ -7,15 +7,14 @@ var terms = ["bootcampspot", "javascript", "container", "github", "sublime", "co
 // default remaining wrong guesses
 var wrongGuessesLeft = 8;
 
+// defining variables
 var correctLettersLeft;
-
 var letterGuessed;
-
 var lettersAlreadyGuessed = [];
 
 // count the number of wins and put it on the page
 var winCounter = 0;
-document.getElementById("win-counter").innerHTML = winCounter;
+document.getElementById("win-counter").innerHTML = "Wins: " + winCounter;
 
 
 function gameLayout() {
