@@ -34,33 +34,31 @@ function gameLayout() {
 
     var blankSpaces = correctLettersLeft;
 
-    // if (correctLettersLeft > 0 && wrongGuessesLeft > 0) {
-
+    // 
     document.onkeyup = function () {
-        console.log(event.key);
         var letterGuessed = event.key;
         console.log("letter guessed: " + letterGuessed);
         lettersAlreadyGuessed.push(letterGuessed);
-    //document.getElementById("incorrect-letters").append(letterGuessed)
-    //}
-    for (var j = 0; j < termToGuess.length; j++) {
-        if (termToGuess[j] === letterGuessed) {
-            blankSpaces[j] = letterGuessed;
-            correctLettersLeft--;
+        if (correctLettersLeft > 0 && wrongGuessesLeft > 0) {  // word hasn't been completed and not out of guesses
+
+            for (var j = 0; j < termToGuess.length; j++) {
+                if (letterGuessed === termToGuess[j]) {
+                    blankSpaces[j] = letterGuessed;
+                    correctLettersLeft--;
+                }
+                if (letterGuessed !== termToGuess[j]) {
+                    wrongGuessesLeft--;
+                }
+
+                document.getElementById("incorrect-letters").innerText = "Letters you have guessed: " + lettersAlreadyGuessed;
+            }
         }
-
-        document.getElementById("incorrect-letters").innerText = "Letters you have guessed: " + lettersAlreadyGuessed;
-
-    }
     }
     //lettersAlreadyGuessed = lettersAlreadyGuessed.push(letterGuessed);
-    console.log("letters already guessed: " + lettersAlreadyGuessed);
-
 
 }
+gameLayout();  // calling the function above
 
-gameLayout();
-// }
 // function gamePlay(event) {
 
 // if (correctLettersLeft > 0 && wrongGuessesLeft > 0) {
@@ -86,7 +84,6 @@ gameLayout();
 
 // document.getElementById("guesses-left").innerHTML = wrongGuessesLeft;
         // }
-
 // gamePlay(event);
 
 // How to hang: 1. post, 2. head, 3. body, 4. arm, 5. arm, 6. leg, 7. leg, 8. noose
