@@ -46,7 +46,7 @@ gameLayout();
 
 function gamePlay(event) {
     
-    var letterGuessed = event.key;
+    //var letterGuessed.textContent = event.key;
 
     if (correctLettersLeft > 0 && wrongGuessesLeft > 0) {
         // var testOne = document.getElementById("blank-spaces");
