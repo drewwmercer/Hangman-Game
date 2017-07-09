@@ -33,6 +33,8 @@ var wrongGuessesLeft = 8;
 // count the number of wins
 var winCounter = 0;
 
+document.getElementById("win-counter").innerHTML = winCounter;
+
 
 function gameLayout() {
 
@@ -52,7 +54,7 @@ function gameLayout() {
     blankSpaces.join(" ") // this puts blank spaces between the underscores
     console.log(wrongGuessesLeft);
 
-    document.querySelector("#guesses-left").innerHTML = "Number of guesses remaining: " + wrongGuessesLeft;
+    document.getElementById("guesses-left").innerHTML = "Number of guesses remaining: " + wrongGuessesLeft;
 }
 
 
