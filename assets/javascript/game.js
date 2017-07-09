@@ -28,9 +28,9 @@ function gameLayout() {
     }
     console.log("blank spaces: " + blankSpaces.join(" "));
 
-    document.getElementById("win-counter").innerHTML = "Wins: " + winCounter;
+    document.getElementById("win-counter").innerHTML = "Wins: " + "<strong>" + winCounter  + "</strong>";
     document.getElementById("blank-spaces").innerHTML = blankSpaces.join(" ");
-    document.getElementById("guesses-left").innerHTML = "Number of incorrect guesses remaining: " + wrongGuessesLeft;
+    document.getElementById("guesses-left").innerHTML = "Number of incorrect guesses remaining: " + "<strong>" + wrongGuessesLeft + "</strong>";
 
     var blankSpaces = correctLettersLeft;
 
@@ -39,7 +39,7 @@ function gameLayout() {
         var letterGuessed = event.key;
         console.log("letter guessed: " + letterGuessed);
         lettersAlreadyGuessed.push(letterGuessed);
-        if (correctLettersLeft > 0 && wrongGuessesLeft > 0) {  // word hasn't been completed and not out of guesses
+       // if (correctLettersLeft > 0 && wrongGuessesLeft > 0) {  // word hasn't been completed and not out of guesses
 
             for (var j = 0; j < termToGuess.length; j++) {
                 if (letterGuessed === termToGuess[j]) {
@@ -50,10 +50,10 @@ function gameLayout() {
                     wrongGuessesLeft--;
                 }
 
-                document.getElementById("incorrect-letters").innerText = "Letters you have guessed: " + lettersAlreadyGuessed;
+                document.getElementById("incorrect-letters").innerHTML = "Letters you have guessed: " + "<strong>" + lettersAlreadyGuessed + "</strong>";
             }
         }
-    }
+   // }
     //lettersAlreadyGuessed = lettersAlreadyGuessed.push(letterGuessed);
 
 }
