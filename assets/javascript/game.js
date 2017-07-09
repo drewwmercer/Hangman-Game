@@ -37,7 +37,7 @@ function gameLayout() {
 
     document.getElementById("blank-spaces").innerHTML = blankSpaces.join(" ");
 
-    document.getElementById("guesses-left").innerHTML = "Number of guesses remaining: " + wrongGuessesLeft;
+    document.getElementById("guesses-left").innerHTML = "Number of incorrect guesses remaining: " + wrongGuessesLeft;
 
     var blankSpaces = correctLettersLeft;
 }
@@ -45,16 +45,18 @@ function gameLayout() {
 gameLayout();
 
 function gamePlay(event) {
-    if (correctLettersLeft > 0) {
+    
+    var letterGuessed = event.key;
+
+    if (correctLettersLeft > 0 && wrongGuessesLeft > 0) {
         // var testOne = document.getElementById("blank-spaces");
         // testOne.innerHTML = blankSpaces.join(" ") // this puts blank spaces between the underscores
 
-        document.onkeyup = function (event) {
-            letterGuessed = event.key;
-            document.getElementById("incorrect-letters").append(letterGuessed)
-        }
+       // document.onkeyup = function (event) {
+          //  var letterGuessed = event.key;
+          //  document.getElementById("incorrect-letters").append(letterGuessed)
+        //}
         console.log(letterGuessed); // take me out later
-
         for (var j = 0; j < termToGuess.length; j++) {
             if (termToGuess[j] === letterGuessed) {
                 blankSpaces[j] = letterGuessed;
@@ -71,7 +73,7 @@ function gamePlay(event) {
 
     }
 
-    gamePlay();
+gamePlay(event);
 
 // 1. post
 // 2. head
