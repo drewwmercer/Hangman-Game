@@ -55,16 +55,23 @@ function gamePlay(event) {
         }
         console.log(letterGuessed); // take me out later
 
-        lettersAlreadyGuessed.push(letterGuessed);
-        console.log("letters already guessed: " + lettersAlreadyGuessed);
+        for (var j = 0; j < termToGuess.length; j++) {
+            if (termToGuess[j] === letterGuessed) {
+                blankSpaces[j] = letterGuessed;
+                correctLettersLeft--;
+            }
+        }
 
-        // test
-        document.getElementById("guesses-left").innerHTML = wrongGuessesLeft;
+            lettersAlreadyGuessed.push(letterGuessed);
+            console.log("letters already guessed: " + lettersAlreadyGuessed);
+
+            // test
+            document.getElementById("guesses-left").innerHTML = wrongGuessesLeft;
+        }
+
     }
 
-}
-
-gamePlay();
+    gamePlay();
 
 // 1. post
 // 2. head
