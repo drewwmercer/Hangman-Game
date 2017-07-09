@@ -54,6 +54,7 @@ function gamePlay(event) {
 
        document.onkeyup = function (event) {
            var letterGuessed = event.key;
+       }
           //  document.getElementById("incorrect-letters").append(letterGuessed)
         //}
         console.log(letterGuessed); // take me out later
