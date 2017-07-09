@@ -27,12 +27,9 @@ function gameLayout() {
         blankSpaces[i] = "_";
     }
     console.log("blank spaces: " + blankSpaces.join(" "));
-    // console.log(wrongGuessesLeft);
 
     document.getElementById("win-counter").innerHTML = "Wins: " + winCounter;
-
     document.getElementById("blank-spaces").innerHTML = blankSpaces.join(" ");
-
     document.getElementById("guesses-left").innerHTML = "Number of incorrect guesses remaining: " + wrongGuessesLeft;
 
     var blankSpaces = correctLettersLeft;
@@ -97,11 +94,4 @@ gameLayout();
 
 // gamePlay(event);
 
-// 1. post
-// 2. head
-// 3. body
-// 4. arm
-// 5. arm
-// 6. leg 
-// 7. leg 
-// 8. noose
+// How to hang: 1. post, 2. head, 3. body, 4. arm, 5. arm, 6. leg, 7. leg, 8. noose
