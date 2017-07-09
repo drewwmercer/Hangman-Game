@@ -37,27 +37,22 @@ function gameLayout() {
     // if (correctLettersLeft > 0 && wrongGuessesLeft > 0) {
 
     document.onkeyup = function () {
-        console.log(event)
+        console.log(event.key);
         var letterGuessed = event.key;
-
-    }
+        console.log("letter guessed: " + letterGuessed);
+        lettersAlreadyGuessed.push(letterGuessed);
     //document.getElementById("incorrect-letters").append(letterGuessed)
     //}
-    console.log(letterGuessed); // take me out later
     for (var j = 0; j < termToGuess.length; j++) {
-
-        lettersAlreadyGuessed.push(letterGuessed);
-
         if (termToGuess[j] === letterGuessed) {
             blankSpaces[j] = letterGuessed;
             correctLettersLeft--;
         }
 
-
-        document.getElementById("incorrect-letters").innerText = "Letters you guessed: " + lettersAlreadyGuessed;
+        document.getElementById("incorrect-letters").innerText = "Letters you have guessed: " + lettersAlreadyGuessed;
 
     }
-
+    }
     //lettersAlreadyGuessed = lettersAlreadyGuessed.push(letterGuessed);
     console.log("letters already guessed: " + lettersAlreadyGuessed);
 
