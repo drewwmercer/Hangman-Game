@@ -40,28 +40,28 @@ function gameLayout() {
 
     var blankSpaces = correctLettersLeft;
 
-// if (correctLettersLeft > 0 && wrongGuessesLeft > 0) {
+    // if (correctLettersLeft > 0 && wrongGuessesLeft > 0) {
 
     document.onkeyup = function () {
         console.log(event)
         var letterGuessed = event.key;
-        
+
     }
     //document.getElementById("incorrect-letters").append(letterGuessed)
     //}
     console.log(letterGuessed); // take me out later
     for (var j = 0; j < termToGuess.length; j++) {
-        
+
         lettersAlreadyGuessed.push(letterGuessed);
-        
+
         if (termToGuess[j] === letterGuessed) {
             blankSpaces[j] = letterGuessed;
             correctLettersLeft--;
         }
 
-    
-    document.getElementById("incorrect-letters").innerText = "Letters you guessed: " + lettersAlreadyGuessed;
-        
+
+        document.getElementById("incorrect-letters").innerText = "Letters you guessed: " + lettersAlreadyGuessed;
+
     }
 
     //lettersAlreadyGuessed = lettersAlreadyGuessed.push(letterGuessed);
