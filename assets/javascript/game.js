@@ -4,17 +4,12 @@ var validLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", 
 // array of terms that can populate the blanks
 var terms = ["bootcampspot", "javascript", "container", "github", "sublime", "console", "devtools", "bootstrap", "react", "node", "database", "mongodb", "resume", "linkedin", "developer", "application", "certification", "chrome", "mozilla", "heroku", "gitlab", "jquery"];
 
-// default remaining wrong guesses
-var wrongGuessesLeft = 8;
-
 // defining variables
+var wrongGuessesLeft = 8;  // default remaining wrong guesses
 var correctLettersLeft;
 var letterGuessed;
-var lettersAlreadyGuessed = [];
-
-// count the number of wins and put it on the page
-var winCounter = 0;
-document.getElementById("win-counter").innerHTML = "Wins: " + winCounter;
+var lettersAlreadyGuessed = [];  // empty array to show the letters pressed already
+var winCounter = 0;  // count the number of wins and put it on the page
 
 
 function gameLayout() {
@@ -33,6 +28,8 @@ function gameLayout() {
     }
     console.log("blank spaces: " + blankSpaces.join(" "));
     // console.log(wrongGuessesLeft);
+
+    document.getElementById("win-counter").innerHTML = "Wins: " + winCounter;
 
     document.getElementById("blank-spaces").innerHTML = blankSpaces.join(" ");
 
