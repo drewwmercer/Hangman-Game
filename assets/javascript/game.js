@@ -40,9 +40,28 @@ function gameLayout() {
             var letterGuessed = event.key;
             console.log("letter guessed: " + letterGuessed);
             lettersAlreadyGuessed.push(letterGuessed);
-            // if (correctLettersLeft > 0 && wrongGuessesLeft > 0) {  // word hasn't been completed and not out of guesses
+            if (letterGuessed.indexOf(validLetters) > -1) {
+                for (var j = 0; j < termToGuess.length; j++) {
+                    if (letterGuessed === termToGuess[i]) {
+                        blankSpaces[j] = letterGuessed;
+                        correctLettersLeft--;
+                    }
+                    if (letterGuessed !== termToGuess[j]) {
+                        wrongGuessesLeft--;
+                    }
+                }
 
-            for (var j = 0; j < termToGuess.length; j++) {
+            }      
+        document.getElementById("incorrect-letters").innerHTML = "Letters you have guessed: " + "<strong>" + lettersAlreadyGuessed + "</strong>";
+
+        }
+        // }
+        //lettersAlreadyGuessed = lettersAlreadyGuessed.push(letterGuessed);
+    }
+    playerMove();
+
+    function checkGuess() {
+        for (var j = 0; j < termToGuess.length; j++) {
                 if (letterGuessed === termToGuess[j]) {
                     blankSpaces[j] = letterGuessed;
                     correctLettersLeft--;
@@ -53,17 +72,14 @@ function gameLayout() {
 
                 document.getElementById("incorrect-letters").innerHTML = "Letters you have guessed: " + "<strong>" + lettersAlreadyGuessed + "</strong>";
             }
-        }
-        // }
-        //lettersAlreadyGuessed = lettersAlreadyGuessed.push(letterGuessed);
     }
-    playerMove();
-
+    checkGuess();
 }
 gameLayout();  // calling the function above
 
 // need loss
 // need win
+// if (correctLettersLeft > 0 && wrongGuessesLeft > 0) {  // word hasn't been completed and not out of guesses
 
 // function gamePlay(event) {
 
@@ -79,9 +95,6 @@ gameLayout();  // calling the function above
 //         correctLettersLeft--;
 //     }
 // }
-
-// lettersAlreadyGuessed.push(letterGuessed);
-// console.log("letters already guessed: " + lettersAlreadyGuessed);
 
 // document.getElementById("guesses-left").innerHTML = wrongGuessesLeft;
         // }
