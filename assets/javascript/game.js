@@ -41,8 +41,9 @@ function gameLayout() {
 
     var blankSpaces = correctLettersLeft;
 
+// if (correctLettersLeft > 0 && wrongGuessesLeft > 0) {
 
-    document.onkeyup = function (event) {
+    document.onkeyup = function () {
         console.log(event)
         var letterGuessed = event.key;
         
@@ -71,10 +72,8 @@ function gameLayout() {
 }
 
 gameLayout();
-
+// }
 // function gamePlay(event) {
-
-//var letterGuessed.textContent = event.key;
 
 // if (correctLettersLeft > 0 && wrongGuessesLeft > 0) {
 // var testOne = document.getElementById("blank-spaces");
@@ -97,11 +96,8 @@ gameLayout();
 // lettersAlreadyGuessed.push(letterGuessed);
 // console.log("letters already guessed: " + lettersAlreadyGuessed);
 
-// test
 // document.getElementById("guesses-left").innerHTML = wrongGuessesLeft;
         // }
-
-
 
 // gamePlay(event);
 
