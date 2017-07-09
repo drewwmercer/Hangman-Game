@@ -11,7 +11,7 @@ var letterGuessed;
 var lettersAlreadyGuessed = [];  // empty array to show the letters pressed already
 var winCounter = 0;  // count the number of wins and put it on the page
 var termToGuess;
-var blankSpaces;
+var blankSpaces = [];
 
 
 function gameLoad() {
@@ -23,6 +23,36 @@ function gameLoad() {
     document.getElementById("blank-spaces").innerHTML = blankSpaces.join(" ");
 }
 gameLoad();
+
+
+function gamePlay() {
+      document.onkeyup = function () {
+            document.getElementById("instruction").innerHTML = "<strong>" + "Good luck!" + "</strong>";
+            var letterGuessed = event.key;
+            console.log("letter guessed: " + letterGuessed);
+            lettersAlreadyGuessed.push(letterGuessed);
+            if (letterGuessed.indexOf(validLetters) > -1) {
+                for (var j = 0; j < termToGuess.length; j++) {
+                    if (letterGuessed === termToGuess[i]) {
+                        blankSpaces[j] = letterGuessed;
+                        correctLettersLeft--;
+                    }
+                    if (letterGuessed !== termToGuess[j]) {
+                        wrongGuessesLeft--;
+                    }
+                }
+
+            }
+            document.getElementById("incorrect-letters").innerHTML = "Letters you have guessed: " + "<strong>" + lettersAlreadyGuessed + "</strong>";
+
+        }
+        // }
+        //lettersAlreadyGuessed = lettersAlreadyGuessed.push(letterGuessed);
+    }
+gamePlay();
+
+
+
 
 function gameLayout() {
 
@@ -63,8 +93,8 @@ function gameLayout() {
                     }
                 }
 
-            }      
-        document.getElementById("incorrect-letters").innerHTML = "Letters you have guessed: " + "<strong>" + lettersAlreadyGuessed + "</strong>";
+            }
+            document.getElementById("incorrect-letters").innerHTML = "Letters you have guessed: " + "<strong>" + lettersAlreadyGuessed + "</strong>";
 
         }
         // }
@@ -74,19 +104,19 @@ function gameLayout() {
 
     function checkGuess() {
         for (var j = 0; j < termToGuess.length; j++) {
-                if (letterGuessed === termToGuess[j]) {
-                    blankSpaces[j] = letterGuessed;
-                    correctLettersLeft--;
-                }
-                if (letterGuessed !== termToGuess[j]) {
-                    wrongGuessesLeft--;
-                }
-                if (correctLettersLeft === 0) {
-                    winCounter++;
-                }
-
-                document.getElementById("incorrect-letters").innerHTML = "Letters you have guessed: " + "<strong>" + lettersAlreadyGuessed + "</strong>";
+            if (letterGuessed === termToGuess[j]) {
+                blankSpaces[j] = letterGuessed;
+                correctLettersLeft--;
             }
+            if (letterGuessed !== termToGuess[j]) {
+                wrongGuessesLeft--;
+            }
+            if (correctLettersLeft === 0) {
+                winCounter++;
+            }
+
+            document.getElementById("incorrect-letters").innerHTML = "Letters you have guessed: " + "<strong>" + lettersAlreadyGuessed + "</strong>";
+        }
     }
     checkGuess();
 }
