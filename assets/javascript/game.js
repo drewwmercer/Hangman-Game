@@ -64,7 +64,7 @@ function gamePlay(event) {
 
 }
 
-gamePlay(event);
+gamePlay();
 
 // 1. post
 // 2. head
