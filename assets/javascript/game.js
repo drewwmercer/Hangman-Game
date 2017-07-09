@@ -11,7 +11,7 @@ var correctLettersLeft;
 
 var letterGuessed;
 
-var lettersAlreadyGuessed;
+var lettersAlreadyGuessed = [];
 
 // count the number of wins and put it on the page
 var winCounter = 0;
@@ -45,18 +45,26 @@ function gameLayout() {
     document.onkeyup = function (event) {
         console.log(event)
         var letterGuessed = event.key;
+        
     }
-    document.getElementById("incorrect-letters").append(letterGuessed)
+    //document.getElementById("incorrect-letters").append(letterGuessed)
     //}
     console.log(letterGuessed); // take me out later
     for (var j = 0; j < termToGuess.length; j++) {
+        
+        lettersAlreadyGuessed.push(letterGuessed);
+        
         if (termToGuess[j] === letterGuessed) {
             blankSpaces[j] = letterGuessed;
             correctLettersLeft--;
         }
+
+    
+    document.getElementById("incorrect-letters").innerText = "Letters you guessed: " + lettersAlreadyGuessed;
+        
     }
 
-    var lettersAlreadyGuessed = lettersAlreadyGuessed.push(letterGuessed);
+    //lettersAlreadyGuessed = lettersAlreadyGuessed.push(letterGuessed);
     console.log("letters already guessed: " + lettersAlreadyGuessed);
 
 
@@ -72,10 +80,10 @@ gameLayout();
 // var testOne = document.getElementById("blank-spaces");
 // testOne.innerHTML = blankSpaces.join(" ") // this puts blank spaces between the underscores
 
-document.onkeyup = function (event) {
-    console.log(event)
-    var letterGuessed = event.key;
-}
+// document.onkeyup = function (event) {
+//     console.log(event)
+//     var letterGuessed = event.key;
+// }
 //  document.getElementById("incorrect-letters").append(letterGuessed)
 //}
 // console.log(letterGuessed); // take me out later
@@ -90,7 +98,7 @@ document.onkeyup = function (event) {
 // console.log("letters already guessed: " + lettersAlreadyGuessed);
 
 // test
-document.getElementById("guesses-left").innerHTML = wrongGuessesLeft;
+// document.getElementById("guesses-left").innerHTML = wrongGuessesLeft;
         // }
 
 
