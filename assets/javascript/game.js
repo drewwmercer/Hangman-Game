@@ -7,6 +7,11 @@ var terms = ["bootcampspot", "javascript", "container", "github", "sublime", "co
 // default remaining wrong guesses
 var wrongGuessesLeft = 8;
 
+var correctLettersLeft;
+
+var letterGuessed;
+
+
 // count the number of wins and put it on the page
 var winCounter = 0;
 document.getElementById("win-counter").innerHTML = winCounter;
@@ -27,22 +32,16 @@ function gameLayout() {
         blankSpaces[i] = "_";
     }
     console.log("blank spaces: " + blankSpaces.join(" "));
-    // blankSpaces.join(" "); // this puts blank spaces between the underscores
     // console.log(wrongGuessesLeft);
 
     document.getElementById("blank-spaces").innerHTML = blankSpaces.join(" ");
 
     document.getElementById("guesses-left").innerHTML = "Number of guesses remaining: " + wrongGuessesLeft;
+
+    var blankSpaces = correctLettersLeft;
 }
 
 gameLayout();
-
-//var guessesLeft = document.getElementById("guesses-left").innerHTML;
-
-
-// document.getElementById("win-counter").innerHTML = winCounter;
-
-var letterGuessed;
 
 function gamePlay(event) {
     if (correctLettersLeft > 0) {
@@ -62,6 +61,8 @@ function gamePlay(event) {
     }
 
 }
+
+gamePlay(event);
 
 // 1. post
 // 2. head
