@@ -11,6 +11,7 @@ var correctLettersLeft;
 
 var letterGuessed;
 
+var lettersAlreadyGuessed;
 
 // count the number of wins and put it on the page
 var winCounter = 0;
@@ -45,8 +46,8 @@ gameLayout();
 
 function gamePlay(event) {
     if (correctLettersLeft > 0) {
-        var testOne = document.getElementById("blank-spaces");
-        testOne.innerHTML = blankSpaces.join(" ") // this puts blank spaces between the underscores
+        // var testOne = document.getElementById("blank-spaces");
+        // testOne.innerHTML = blankSpaces.join(" ") // this puts blank spaces between the underscores
 
         document.onkeyup = function (event) {
             letterGuessed = event.key;
@@ -54,7 +55,8 @@ function gamePlay(event) {
         }
         console.log(letterGuessed); // take me out later
 
-
+        lettersAlreadyGuessed.push(letterGuessed);
+        console.log("letters already guessed: " + lettersAlreadyGuessed);
 
         // test
         document.getElementById("guesses-left").innerHTML = wrongGuessesLeft;
