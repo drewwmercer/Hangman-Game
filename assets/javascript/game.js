@@ -33,7 +33,7 @@ document.onkeyup = function (event) {
     }
     return false;
 };
-
+ 
 function createWord(terms) {
     termToGuess = terms[Math.floor(Math.random() * terms.length)];
     console.log(termToGuess);
