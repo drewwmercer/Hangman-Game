@@ -42,7 +42,7 @@ function createWord(terms) {
         blankSpaces[i] = "_";
     }
     document.getElementById("blank-spaces").innerHTML = blankSpaces.join(" ");
-    //Create placeholder for word in UI.
+
     createWordPlaceholder(termToGuess);
     return termToGuess;
 };
@@ -109,7 +109,7 @@ function buildWord(letterGuessed) {
 
     var termNeedArray = Array.prototype.slice.call(termToGuess);
 
-    if (placeholder.split(',') === termNeedArray.join(" ")) {
+    if (placeholder === termNeedArray.join(" ")) {
         console.log("Woot");
         winCounter++;
         document.getElementById("win-counter").innerHTML = "Wins: " + "<strong>" + winCounter + "</strong>";
