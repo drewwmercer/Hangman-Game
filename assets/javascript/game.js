@@ -110,7 +110,6 @@ function buildWord(letterGuessed) {
     var termNeedArray = Array.prototype.slice.call(termToGuess);
 
     if (placeholder === termNeedArray.join(" ")) {
-        console.log("Woot");
         winCounter++;
         document.getElementById("win-counter").innerHTML = "Wins: " + "<strong>" + winCounter + "</strong>";
         resetBoard();
